@@ -35,7 +35,7 @@
         <div>
             <b>Change Status</b>
             <form id="statusForm">
-                <input type="text" id="statusInput">
+                <input type="text" id="statusInput"><br/>
                 <button type="submit">Change Status</button>
             </form>
         </div>
@@ -52,34 +52,96 @@
         <div>
             <b>Add a friend</b>
             <form id="addFriend">
-
-                <input type="text" id="friendName">
+                <input type="text" id="friendName"><br/>
                 <button id="friendsubmit" type="submit">Add Friend</button>
             </form>
         </div>
 
     </c:when>
     <c:otherwise>
-        <form method="post" action="Controller?action=LogIn">
-            <p>
-                <label for="email">Your email </label>
-                <input type="text" id="email" name="email" value="jan@ucll.be">
-            </p>
-            <p>
-                <label for="password">Your password</label>
-                <input type="password" id="password" name="password" value="t">
-            </p>
-            <p>
-                <input type="submit" id="loginbutton" value="Log in">
-            </p>
-        </form>
+        <div>
+            <b>Login</b>
+            <form method="post" action="Controller?action=LogIn">
+                <p>
+                    <label for="email">Your email </label>
+                    <input type="text" id="email" name="email" value="jan@ucll.be">
+                </p>
+                <p>
+                    <label for="password">Your password</label>
+                    <input type="password" id="password" name="password" value="t">
+                </p>
+                <p>
+                    <input type="submit" id="loginbutton" value="Log in">
+                </p>
+            </form>
+        </div>
     </c:otherwise>
-</c:choose></main>
+</c:choose>
+    <article id="blog">
+        <b>Blog</b>
+        <form id="1">
+            <p>Was het een interessante projectweek?</p>
+            <div>
+                <b>Comments:</b>
+                <ul id="comments1"></ul>
+            </div>
+            <input type="text" id="username1" value="${user.getFirstName()}">
+            <input type="text" id="comment1">
+            <input type="number" min="0" max="10" id="rating1">
+            <button type="submit">Add comment</button>
+        </form>
+        <form id="2">
+            <p>Wat ga je vandaag doen?</p>
+            <div>
+                <b>Comments:</b>
+                <ul id="comments2"></ul>
+            </div>
+            <input type="text" id="username2" value="${user.getFirstName()}">
+            <input type="text" id="comment2">
+            <input type="number" min="0" max="10" id="rating2">
+            <button type="submit">Add comment</button>
+        </form>
+        <form id="3">
+            <p>Welke muziek ben je nu aan het luisteren</p>
+            <div>
+                <b>Comments:</b>
+                <ul id="comments3"></ul>
+            </div>
+            <input type="text" id="username3" value="${user.getFirstName()}">
+            <input type="text" id="comment3">
+            <input type="number" min="0" max="10" id="rating3">
+            <button type="submit">Add comment</button>
+        </form>
+        <form id="4">
+            <p>Welke dag is het vandaag?</p>
+            <div>
+                <b>Comments:</b>
+                <ul id="comments4"></ul>
+            </div>
+            <input type="text" id="username4" value="${user.getFirstName()}">
+            <input type="text" id="comment4">
+            <input type="number" min="0" max="10" id="rating4">
+            <button type="submit">Add comment</button>
+        </form>
+        <form id="5">
+            <p>2+2*2=?</p>
+            <div>
+                <b>Comments:</b>
+                <ul id="comments5"></ul>
+            </div>
+            <input type="text" id="username5" value="${user.getFirstName()}">
+            <input type="text" id="comment5">
+            <input type="number" min="0" max="10" id="rating5">
+            <button type="submit">Add comment</button>
+        </form>
+    </article>
+</main>
 
 <jsp:include page="footer.jsp">
     <jsp:param name="title" value="Home"/>
 </jsp:include>
 
 <script src="js/main.js"></script>
+<script src="js/blog.js"></script>
 </body>
 </html>

@@ -16,7 +16,7 @@ public class ControllerFactory {
 			handler = (RequestHandler) handlerObject;
 			handler.setModel(model);
 		} catch (Exception e) {
-			throw new RuntimeException("Deze pagina bestaat niet!");
+			throw new RuntimeException("Deze pagina bestaat niet!" + handlerName);
 		}
 		return handler;
 	}
