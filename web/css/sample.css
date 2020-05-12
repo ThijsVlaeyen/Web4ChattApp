@@ -168,3 +168,7 @@ li {
 	padding: 0.5rem 0.5rem 0.5rem 0.5rem;
 	background: #eeeeee;
 }
+
+#chatbox{
+	margin-top: 0;
+}

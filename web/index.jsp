@@ -21,7 +21,8 @@
                 </c:forEach>
             </ul>
         </div>
-    </c:if> <c:choose>
+    </c:if>
+    <c:choose>
     <c:when test="${user!=null}">
 
         <div>
@@ -32,6 +33,15 @@
                 <input type="submit" id="logoutbutton" value="Log Out">
             </form>
         </div>
+
+        <div>
+            <b>Change the background</b>
+            <form id="backgroundForm">
+                <input type="color" id="colorChooser" value="#FFF">
+                <button type="submit">Change Background</button>
+            </form>
+        </div>
+
         <div>
             <b>Change Status</b>
             <form id="statusForm">
@@ -39,21 +49,35 @@
                 <button type="submit">Change Status</button>
             </form>
         </div>
-        <div>
-            <b>Your friends</b>
-            <table id="friends">
-                <tr>
-                    <th>Name</th>
-                    <th>Status</th>
-                </tr>
-            </table>
-        </div>
 
         <div>
             <b>Add a friend</b>
             <form id="addFriend">
                 <input type="text" id="friendName"><br/>
                 <button id="friendsubmit" type="submit">Add Friend</button>
+            </form>
+        </div>
+
+        <div>
+            <b>Your friends</b>
+            <button id="showAndHideFriends" type="button" class="btn">Show friends</button>
+            <table id="friends" style="display: none">
+                <tr>
+                    <th>Name</th>
+                    <th>Status</th>
+                    <th>Chat</th>
+                </tr>
+            </table>
+        </div>
+
+        <div class="chat-popup" id="chatdiv" style="display: none">
+            <form id="chatform" method="post" class="form-container">
+                <b>Chat with</b> <b id="chatRecipient"></b>
+                <div id="chatbox"></div>
+                <input placeholder="Type message.." id="msg" name="msg">
+                <br>
+                <button id="chatsubmit" type="button" class="btn">Send</button>
+                <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
             </form>
         </div>
 
@@ -141,7 +165,9 @@
     <jsp:param name="title" value="Home"/>
 </jsp:include>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js" type="text/javascript"></script>
 <script src="js/main.js"></script>
 <script src="js/blog.js"></script>
+<script src="js/background.js"></script>
 </body>
 </html>
