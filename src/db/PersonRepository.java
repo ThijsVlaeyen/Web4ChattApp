@@ -9,11 +9,11 @@ public class PersonRepository implements IPersonRepository {
 	private Map<String, Person> persons = new HashMap<String, Person>();
 	
 	public PersonRepository() {
-		Person administrator = new Person("bib@ucll.be", "t", "Bib", "Liothekaris", Role.BIB);
+		Person administrator = new Person("bib@ucll.be", "t", "Bib", "Liothekaris", Role.BIB, "staart 69", "O");
 		add(administrator);
-		Person jan = new Person("jan@ucll.be", "t", "Jan", "Janssens", Role.LID);
+		Person jan = new Person("jan@ucll.be", "t", "Jan", "Janssens", Role.LID, "straat 17", "M");
 		add(jan);
-		Person an = new Person("an@ucll.be", "t", "An", "Cornelissen", Role.LID);
+		Person an = new Person("an@ucll.be", "t", "An", "Cornelissen", Role.LID, "straat 56", "F");
 		add(an);
 	}
 	

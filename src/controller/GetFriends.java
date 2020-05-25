@@ -18,7 +18,6 @@ public class GetFriends extends RequestHandler {
             response.setContentType("application/json");
 
             try {
-
                 getPersonService().updatePersons(p);
                 request.getSession().setAttribute("user",p);
                 response.setContentType("text/json");

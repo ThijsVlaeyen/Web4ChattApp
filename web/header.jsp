@@ -5,14 +5,16 @@
 <h1><span>Chat App</span></h1>
 <nav>
 <ul>
-<c:choose>
-<c:when test="${param.title=='Home'}">
-<li  id="actual"><a href="">Home</a></li>
-</c:when>
-<c:otherwise>
-<li><a href="">Home</a></li>
-</c:otherwise>
-</c:choose>
+    <c:choose>
+        <c:when test="${param.title=='Home'}">
+            <li id="actual"><a href="Controller?action=Home">Home</a></li>
+            <li><a href="Controller?action=GetSignup">Sign Up</a></li>
+        </c:when>
+        <c:otherwise>
+            <li><a href="Controller?action=Home">Home</a></li>
+            <li id="actual"><a href="Controller?action=GetSignup">Sign Up</a></li>
+        </c:otherwise>
+    </c:choose>
 
 
 </ul>

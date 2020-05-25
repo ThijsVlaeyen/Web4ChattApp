@@ -19,16 +19,21 @@ public class Person {
 	private String lastName;
 	private Role role;
 	private String status;
-	private List<Person> friends;
+	private String address;
+	private String sex;
+
+private List<Person> friends;
 
 	public Person(String userId, String password, String firstName,
-			String lastName,Role role) {
+			String lastName,Role role, String address, String sex) {
 		setUserId(userId);
 		setHashedPassword(password);
 		setFirstName(firstName);
 		setLastName(lastName);
 		setRole(role);
 		setStatus("Offline");
+		setAddress(address);
+		setSex(sex);
 		setFriends(new ArrayList<Person>());
 	}
 
@@ -40,7 +45,23 @@ public class Person {
 		this.friends = friends;
 	}
 
-	public String getStatus() {
+public void setAddress(String address) {
+	this.address = address;
+}
+
+public void setSex(String sex) {
+	this.sex = sex;
+}
+
+public String getAddress() {
+	return address;
+}
+
+public String getSex() {
+	return sex;
+}
+
+public String getStatus() {
 		if (status != null) {
 			return status;
 		} else {
